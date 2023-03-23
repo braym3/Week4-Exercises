@@ -18,6 +18,32 @@ public class Demo {
 
 		System.out.println(nums.stream().reduce((a, b) -> a * b).get());
 
+		// Starting with a list of numbers, use streams to do the following:
+
+		// Find the max value.
+		System.out.println("\nMAX: ");
+		System.out.println(nums.stream().reduce((nextNum, biggestSoFar) -> {
+			if (nextNum > biggestSoFar)
+				return nextNum;
+			else
+				return biggestSoFar;
+		}).get());
+
+		// Find the min value.
+		System.out.println("\nMIN: ");
+		System.out.println(nums.stream().reduce((nextNum, smallestSoFar) -> {
+			if (nextNum < smallestSoFar)
+				return nextNum;
+			else
+				return smallestSoFar;
+		}).get());
+
+		// Remove the odd numbers.
+		// Remove the even numbers.
+		// Find the sum of the list.
+		// Square every number in the list then remove the even numbers and then find
+		// the min value.
+
 	}
 
 }
