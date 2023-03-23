@@ -6,6 +6,7 @@ public class Runner {
 		// Addition
 		Calculator add = (a, b) -> a + b;
 		System.out.println(add.calculation(3, 5));
+		System.out.println(add.calculation(10, 5));
 
 		// Subtraction
 		Calculator subtract = (a, b) -> a - b;
