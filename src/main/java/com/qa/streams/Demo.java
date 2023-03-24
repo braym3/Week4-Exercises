@@ -1,6 +1,7 @@
 package com.qa.streams;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Demo {
 
@@ -61,6 +62,19 @@ public class Demo {
 						return smallestSoFar;
 				}).get());
 
+		// Sort names alphabetically
+		List<String> names2 = List.of("Gary", "Thomas", "Barbra", "Margaret", "Colin", "Pat", "Irene", "David",
+				"Tammy");
+
+		System.out.println("\nLIST ALPHABETICALLY: ");
+		names2.stream().sorted().forEach(System.out::println);
+
+		// Remove names beginning with T
+		System.out.println("\nREMOVE NAMES STARTING WITH T: ");
+		names2.stream().filter(s -> !s.startsWith("T")).forEach(System.out::println);
+
+		// Convert sorted names back to list
+		List<String> sortedNames = names2.stream().sorted().collect(Collectors.toList());
 	}
 
 }
