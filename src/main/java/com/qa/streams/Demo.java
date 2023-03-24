@@ -39,10 +39,27 @@ public class Demo {
 		}).get());
 
 		// Remove the odd numbers.
+		System.out.println("\nREMOVE ODD: ");
+		nums.stream().filter(num -> num % 2 == 0).forEach(System.out::println);
+
 		// Remove the even numbers.
+		System.out.println("\nREMOVE EVEN: ");
+		nums.stream().filter(num -> num % 2 != 0).forEach(System.out::println);
+
 		// Find the sum of the list.
+		System.out.println("\nSUM: ");
+		System.out.println(nums.stream().reduce((a, b) -> a + b).get());
+
 		// Square every number in the list then remove the even numbers and then find
 		// the min value.
+		System.out.println("\nMIN ODD SQUARE: ");
+		System.out
+				.println(nums.stream().map(a -> a * a).filter(num -> num % 2 != 0).reduce((nextNum, smallestSoFar) -> {
+					if (nextNum < smallestSoFar)
+						return nextNum;
+					else
+						return smallestSoFar;
+				}).get());
 
 	}
 
